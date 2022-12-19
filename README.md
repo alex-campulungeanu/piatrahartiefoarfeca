@@ -1,10 +1,10 @@
 
 <h1 align="center">
 <br>
-  "Project name"
+  "piatrafoarfecahartie"
 </h1>
 
-<p align="center">Project review</p>
+<p align="center">to lazy for rock paper scissor ?</p>
 
 <hr />
 <br />
@@ -12,36 +12,20 @@
 
 ## 📚 Project Definition
 
-Definition example
+An automated way to play "rock paper scissor"
 
 
 ## 🛠️ Features
 
 Technologies used:
 
-- ⚛️ **1**
-- 🌐 **2** - Description
-
-
-## 🚀 Instalation
-Description
-```sh
-
-```
-
-## 💻 Development
+- ⚛️ **javascript**
 
 
 ## Documentation
-
+https://stackoverflow.com/questions/60727534/balls-bouncing-off-of-each-other
 
 ## TODO:
-- [ ] todo 1
-- [x] todo 2
-
-
-## Testing
-
-
-
-
+- [ ] refactor this to ReactJs
+- [ ] fix the issue with line collide
+- [ ] add new panel in right side with the current status of balls and finaly the winner
