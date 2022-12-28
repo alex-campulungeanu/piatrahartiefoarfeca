@@ -1,6 +1,6 @@
 /** @type {HTMLCanvasElement} */
 const canvas = document.getElementById('canvas')
-canvas.width = innerWidth -20
+canvas.width = innerWidth -200
 canvas.height = innerHeight - 20
 const ctx = canvas.getContext("2d")
 
@@ -24,10 +24,10 @@ const gameTypes = [
 ]
 
 function createLines () {
-  lines.push(new Line(-10, 10, ctx.canvas.width + 10, 5));
-  lines.push((new Line(-10, ctx.canvas.height - 2, ctx.canvas.width + 10, ctx.canvas.height - 10)).reverse());
-  lines.push((new Line(10, -10, 4, ctx.canvas.height + 10)).reverse());
-  lines.push(new Line(ctx.canvas.width - 3, -10, ctx.canvas.width - 10, ctx.canvas.height + 10)); 
+  lines.push(new Line(0, 0, ctx.canvas.width, 0));
+  lines.push((new Line(0, ctx.canvas.height, ctx.canvas.width, ctx.canvas.height)).reverse());
+  lines.push((new Line(0, 0, 0, ctx.canvas.height)).reverse());
+  lines.push(new Line(ctx.canvas.width, 0, ctx.canvas.width, ctx.canvas.height)); 
 }
 
 function canAdd(ball) {
@@ -38,10 +38,10 @@ function canAdd(ball) {
 }
 
 function createBalls(bCount) {
+  let idx = 0
   while (bCount--) {
     let tries = 100;
     // debugger
-    let idx = 1
     while (tries--) {
       const dir = rand(0, TAU);
       const vel = rand(VEL_MIN, VEL_MAX);
@@ -59,7 +59,7 @@ function createBalls(bCount) {
       );
       if (canAdd(ball)) {
         balls.push(ball);
-        idx ++ 
+        idx ++
         break;
       }
     }
@@ -112,6 +112,20 @@ function resolveCollisions() {
   }
 }
 
+function setScoreBoard() {
+  let score = {
+    rock: 0,
+    paper: 0,
+    scissor: 0
+  }
+  for (ball of balls) {
+    score[ball.type] = score[ball.type] + 1
+  }
+  document.getElementById('rockCnt').innerHTML = score.rock
+  document.getElementById('paperCnt').innerHTML = score.paper
+  document.getElementById('scissorCnt').innerHTML = score.scissor
+}
+
 createLines()
 createBalls(BALL_COUNT)
 
@@ -123,6 +137,7 @@ function mainLoop() {
   ctx.beginPath();
   for (const b of balls) {b.draw()}
   for (const l of lines) {l.draw()}
+  setScoreBoard()
   ctx.stroke()
   requestAnimationFrame(mainLoop);
 }

@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  /* overflow: auto; */
+}
+
+.summaryContainer {
+  width: 100%;
+  padding: 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border-top: solid #e64980 6px;
+  background-color: #f7f8fd;
+  
+}
+
+.summaryElement {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.summaryLabel, .summaryScor {
+  font-size: 20px;
+}

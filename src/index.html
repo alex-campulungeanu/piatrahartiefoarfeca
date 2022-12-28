@@ -1,7 +1,30 @@
 <html>
-
+  <link rel="stylesheet" href="index.css">
 <body>
-  <canvas id="canvas"></canvas>
+  <div class="container">
+    <div class="summaryContainer">
+        <div>SCOREBOARD</div>
+        <br>
+        <div class="summaryElement">
+          <img src="assets/rock.png" alt="">
+          <div class="summaryLabel">rock</div>
+          <div id="rockCnt" class="summaryScor">0</div>
+        </div>
+        <div class="summaryElement">
+          <img src="assets/paper.png" alt="">
+          <div class="summaryLabel">paper</div>
+          <div id="paperCnt" class="summaryScor">0</div>
+        </div>
+        <div class="summaryElement">
+          <img src="assets/scissor.png" alt="">
+          <div class="summaryLabel">scissor</div>
+          <div id="scissorCnt" class="summaryScor">0</div>
+        </div>
+    </div>
+    <div>
+      <canvas id="canvas"></canvas>
+    </div>
+  </div>
 </body>
 
 <script src="js/utils.js"></script>
